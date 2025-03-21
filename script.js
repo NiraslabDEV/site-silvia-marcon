@@ -15,7 +15,7 @@ const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const navLinks = document.querySelector(".nav-links");
 const menuOverlay = document.querySelector(".menu-overlay");
 
-// Função para alternar o menu mobile
+// Função aprimorada para alternar o menu mobile
 function toggleMobileMenu() {
   const isOpen = navLinks.classList.contains("active");
 
@@ -23,16 +23,48 @@ function toggleMobileMenu() {
   navLinks.classList.toggle("active");
   menuOverlay.classList.toggle("active");
 
-  // Alternar ícone do botão
+  // Alternar ícone do botão com animação
   const icon = mobileMenuBtn.querySelector("i");
+
   if (isOpen) {
+    // Animar para fechar o menu
+    icon.style.transform = "rotate(0deg)";
     icon.classList.remove("fa-times");
     icon.classList.add("fa-bars");
     document.body.style.overflow = ""; // Restaurar scroll
+
+    // Reset das animações dos links
+    setTimeout(() => {
+      const links = navLinks.querySelectorAll("a");
+      links.forEach((link) => {
+        link.style.animation = "none";
+        link.style.opacity = "0";
+        link.style.transform = "translateY(20px)";
+      });
+
+      const buttons = navLinks.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.style.animation = "none";
+        button.style.opacity = "0";
+      });
+    }, 500);
   } else {
+    // Animar para abrir o menu
+    icon.style.transform = "rotate(90deg)";
     icon.classList.remove("fa-bars");
     icon.classList.add("fa-times");
     document.body.style.overflow = "hidden"; // Prevenir scroll
+
+    // Animar entrada dos links sequencialmente
+    const links = navLinks.querySelectorAll("a");
+    links.forEach((link, index) => {
+      link.style.animationDelay = `${0.1 * (index + 1)}s`;
+    });
+
+    const buttons = navLinks.querySelectorAll("button");
+    buttons.forEach((button, index) => {
+      button.style.animationDelay = `${0.1 * (links.length + index + 1)}s`;
+    });
   }
 }
 
@@ -47,6 +79,31 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     if (navLinks.classList.contains("active")) {
       toggleMobileMenu();
+    }
+  });
+});
+
+// Fechar o menu quando a tela for redimensionada para desktop
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768 && navLinks.classList.contains("active")) {
+    toggleMobileMenu();
+  }
+});
+
+// Adicionar efeitos de hover nos links da navbar
+const navbarLinks = document.querySelectorAll(".nav-links a");
+navbarLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    if (window.innerWidth <= 768) {
+      link.style.transform = "translateX(5px)";
+      link.style.background = "rgba(0, 255, 157, 0.15)";
+    }
+  });
+
+  link.addEventListener("mouseleave", () => {
+    if (window.innerWidth <= 768) {
+      link.style.transform = "translateX(0)";
+      link.style.background = "rgba(255, 255, 255, 0.05)";
     }
   });
 });
@@ -1860,3 +1917,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.head.appendChild(style);
 })();
+
+// Melhorar a navegação ativa durante a rolagem da página
+window.addEventListener("scroll", highlightNavOnScroll);
+window.addEventListener("load", highlightNavOnScroll);
+
+// Função para destacar o link de navegação ativo com base na seção visível
+function highlightNavOnScroll() {
+  // Obter a posição atual de rolagem
+  const scrollPosition = window.scrollY;
+
+  // Obter todas as seções com ids
+  const sections = document.querySelectorAll("section[id], header[id]");
+
+  // Obter os links da navegação
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  // Verificar qual seção está visível
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100; // Ajuste para compensar a altura da navbar
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      // Remover a classe ativa de todos os links
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      // Adicionar a classe ativa ao link correspondente
+      const activeLink = document.querySelector(
+        `.nav-links a[href="#${sectionId}"]`
+      );
+      if (activeLink) {
+        activeLink.classList.add("active");
+
+        // Adicionar efeito visual especial para o link ativo
+        activeLink.style.transition = "all 0.3s ease";
+        activeLink.style.transform = "scale(1.05)";
+        setTimeout(() => {
+          activeLink.style.transform = "scale(1)";
+        }, 300);
+      }
+    }
+  });
+}
+
+// Animar a rolagem ao clicar nos links de navegação
+document.querySelectorAll('.nav-links a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Fechar o menu mobile, se estiver aberto
+    if (navLinks.classList.contains("active")) {
+      toggleMobileMenu();
+    }
+
+    // Rolar suavemente para a seção
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 70, // Ajuste para compensar a navbar
+        behavior: "smooth",
+      });
+    }
+  });
+});

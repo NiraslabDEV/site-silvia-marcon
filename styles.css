@@ -6319,3 +6319,326 @@ footer {
     justify-content: center;
   }
 }
+
+/* Menu Mobile Aprimorado */
+.mobile-menu-btn {
+  display: none; /* Oculto por padrão em desktops */
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1100;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn i {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.mobile-menu-btn:hover {
+  transform: rotate(90deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  z-index: 1005;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu-overlay.active {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Adaptações para diferentes tamanhos de tela */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-buttons {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    position: relative;
+    z-index: 1100;
+    visibility: visible;
+    opacity: 1;
+    margin-left: auto;
+    margin-right: 0;
+    order: 3;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: linear-gradient(
+      135deg,
+      rgba(10, 5, 32, 0.98),
+      rgba(50, 20, 100, 0.95)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 1050;
+    transition: right 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    right: 0;
+    animation: slideIn 0.5s forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      right: -100%;
+      opacity: 0;
+    }
+    100% {
+      right: 0;
+      opacity: 1;
+    }
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  .nav-links.active a {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.4s forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-links a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .nav-links a:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .nav-links a:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .nav-links a:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .nav-links a:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .nav-links a:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  .nav-links a:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+
+  .nav-links a:hover {
+    background: rgba(0, 255, 157, 0.15);
+    transform: translateX(5px);
+  }
+
+  .nav-links a::after {
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+  }
+
+  .nav-links a:hover::after {
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .theme-toggle,
+  .lang-toggle {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    background: rgba(0, 255, 157, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .nav-links.active .theme-toggle,
+  .nav-links.active .lang-toggle {
+    animation: fadeInUp 0.4s forwards 0.8s;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    padding: 0.8rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Adicionar estilos para o link ativo */
+.nav-links a.active {
+  color: var(--accent-color);
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: translateY(-50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+/* Adicionar efeito de brilho ao passar o mouse sobre os links */
+.nav-links a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Estilos especiais para o menu mobile quando ativo */
+@media (max-width: 768px) {
+  /* Indicador ativo para mobile */
+  .nav-links a.active {
+    background: rgba(0, 255, 157, 0.2);
+    border-left: 3px solid var(--accent-color);
+    padding-left: calc(1.5rem - 3px);
+  }
+
+  .nav-links a.active::before {
+    display: none;
+  }
+
+  /* Bordas com brilho nos botões */
+  .nav-links .nav-buttons .theme-toggle,
+  .nav-links .nav-buttons .lang-toggle {
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links .nav-buttons .theme-toggle:hover,
+  .nav-links .nav-buttons .lang-toggle:hover {
+    border: 1px solid rgba(0, 255, 157, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+    transform: translateY(-3px);
+  }
+
+  /* Gradiente no topo da navegação */
+  .nav-links::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    z-index: 1;
+  }
+
+  /* Efeito de linha no fim da navegação */
+  .nav-links::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.5));
+    z-index: 1;
+  }
+}
