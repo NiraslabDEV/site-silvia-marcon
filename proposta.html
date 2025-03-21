@@ -670,6 +670,120 @@
           padding: 30px 20px;
         }
       }
+
+      /* Estilo para o preço original riscado */
+      .original-price {
+        text-decoration: line-through;
+        font-size: 2.2rem;
+        opacity: 0.7;
+        display: block;
+        margin-bottom: -15px;
+        font-weight: 600;
+      }
+
+      /* Estilo para o badge de desconto */
+      .discount-badge {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        background: linear-gradient(45deg, #ff5757, #ff0000);
+        color: #fff;
+        font-weight: 700;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        transform: rotate(-10deg);
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+        z-index: 10;
+        animation: pulse-discount 1.5s infinite alternate;
+      }
+
+      @keyframes pulse-discount {
+        0% {
+          transform: rotate(-10deg) scale(1);
+        }
+        100% {
+          transform: rotate(-10deg) scale(1.1);
+        }
+      }
+
+      /* Estilo para a nota de desconto pessoal */
+      .personal-note {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px dashed rgba(255, 255, 255, 0.3);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        position: relative;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .personal-note::before {
+        content: "\201C";
+        font-size: 3rem;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+        color: var(--accent-color);
+        opacity: 0.5;
+      }
+
+      /* Melhorias na chamada final */
+      .final-cta {
+        background: linear-gradient(
+          145deg,
+          rgba(30, 30, 30, 0.8),
+          rgba(20, 20, 20, 0.8)
+        );
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 60px;
+        text-align: center;
+        position: relative;
+        border: 1px solid rgba(0, 255, 157, 0.2);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .final-cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 255, 157, 0.1) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .final-cta-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #ffffff, var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .final-cta-text {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
+      }
+
+      .final-cta-highlight {
+        color: var(--accent-color);
+        font-weight: 700;
+        font-size: 1.1em;
+      }
     </style>
   </head>
   <body class="dark-theme">
@@ -884,6 +998,7 @@
         <div class="proposta-cards">
           <div class="proposta-card">
             <div class="best-option-badge">Melhor Opção</div>
+            <div class="discount-badge">45% OFF</div>
             <h3 class="proposta-card-title">
               <i class="fas fa-paint-brush"></i> Desenvolvimento Completo
             </h3>
@@ -899,12 +1014,19 @@
                 <li>Integração com WhatsApp para vendas</li>
               </ul>
               <div class="limited-time">
-                <strong>Oferta por tempo limitado:</strong> Assinando até 20/12,
-                ganhe 1 mês de suporte grátis!
+                <strong>Oferta Especial:</strong> Assinando a proposta, ganhe
+                treinamento personalizado para você gerenciar seu próprio site!
+              </div>
+              <div class="personal-note">
+                "Por ser você, Silvia, e pelo carinho especial que tenho pelo
+                seu trabalho, estou oferecendo um desconto exclusivo. Seu site
+                será destaque no meu portfólio, e por isso caprichei em cada
+                detalhe."<br /><strong>— Gabriel</strong>
               </div>
             </div>
             <div class="proposta-card-price">
-              R$ 4.500,00
+              <span class="original-price">R$ 4.500,00</span>
+              R$ 2.500,00
               <span class="price-note">Investimento único</span>
             </div>
           </div>
@@ -916,19 +1038,22 @@
             </h3>
             <div class="proposta-card-content">
               <p>
-                Suporte completo para manter seu site sempre atualizado
-                (opcional).
+                Suporte flexível quando você precisar (totalmente opcional).
               </p>
               <ul>
-                <li>Alterações no conteúdo quando precisar</li>
-                <li>Adição de novos produtos ou eventos</li>
-                <li>SEO com relatório mensal de desempenho</li>
-                <li>Suporte rápido via WhatsApp</li>
+                <li>
+                  Você receberá treinamento para fazer atualizações básicas
+                </li>
+                <li>
+                  Assistência para alterações mais complexas quando necessário
+                </li>
+                <li>Resolução de problemas técnicos e erros no HTML</li>
+                <li>Suporte rápido via WhatsApp sem compromisso mensal</li>
               </ul>
             </div>
             <div class="proposta-card-price">
               R$ 350,00
-              <span class="price-note">Mensalidade (opcional)</span>
+              <span class="price-note">Por demanda (sem mensalidade)</span>
             </div>
           </div>
 
@@ -1023,6 +1148,15 @@
                   </li>
                 </ul>
               </li>
+              <li>
+                Implementação do domínio já adquirido
+                <ul>
+                  <li>Configuração completa do domínio que você já comprou</li>
+                  <li>
+                    Direcionamento para o novo site e configuração de e-mails
+                  </li>
+                </ul>
+              </li>
             </ul>
             <p>
               Vamos juntos transformar essa presença digital em um verdadeiro
@@ -1037,10 +1171,36 @@
             comercial com quem valoriza arte de verdade.
           </p>
           <a
-            href="https://wa.me/5551999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20site"
+            href="https://wa.me/5511941431850?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20site"
             class="proposta-cta-button"
           >
             Falar com um Consultor <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+
+        <div class="final-cta">
+          <h3 class="final-cta-title">Uma Oportunidade Única</h3>
+          <p class="final-cta-text">
+            O valor de mercado para um site desse porte seria no mínimo
+            <strong>R$ 4.500,00</strong>, um investimento já muito acessível
+            para a qualidade entregue. Porém, pela oportunidade de ter seu
+            trabalho em meu portfólio e pelo carinho que tenho por você e sua
+            arte, ofereço essa
+            <span class="final-cta-highlight"
+              >condição exclusiva de R$ 2.500,00</span
+            >.
+          </p>
+          <p class="final-cta-text">
+            Este valor é válido apenas para esta proposta e representa um
+            investimento em sua presença digital que trará frutos por muito
+            tempo. Não perca a chance de ter um site premium por um valor tão
+            especial.
+          </p>
+          <a
+            href="https://wa.me/5511941431850?text=Olá%20Gabriel,%20adorei%20sua%20proposta%20para%20o%20site.%20Vamos%20fechar!"
+            class="proposta-cta-button"
+          >
+            Aceitar Proposta Especial <i class="fas fa-handshake"></i>
           </a>
         </div>
 
@@ -1051,7 +1211,7 @@
             <a href="index.html#sobre" class="proposta-footer-link"
               >Sobre Silvia Marcon</a
             >
-            <a href="https://wa.me/5551999999999" class="proposta-footer-link"
+            <a href="https://wa.me/5511941431850" class="proposta-footer-link"
               >Contato via WhatsApp</a
             >
           </div>
@@ -1063,7 +1223,7 @@
       <div class="footer-content">
         <div class="footer-copy">
           <p class="footer-copy-text">
-            &copy; 2024 Silvia Marcon • Todos os direitos reservados •
+            &copy; 2025 Silvia Marcon • Todos os direitos reservados •
             Desenvolvido por
             <a href="#" class="footer-copy-link">Estúdio Criativo</a>
           </p>
