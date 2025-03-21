@@ -1,0 +1,16 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente local
+.env
+
+# Diretórios de dependências que possam existir
+node_modules/
+vendor/
+
+# Arquivos de log
+*.log
+
+# Arquivos de cache
+.cache/ 

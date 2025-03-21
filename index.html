@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silvia Marcon | Arte Urbana</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-theme">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-text">Silvia <span class="accent">Marcon</span></span>
+      </div>
+      <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Menu"
+        style="display: flex; z-index: 1100; visibility: visible; opacity: 1"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#workshop">Workshop</a>
+        <a href="#exposicoes">Exposições</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#nft" class="nft-nav">NFT Club</a>
+        <a href="#sobre">Sobre</a>
+        <div class="nav-buttons">
+          <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-sun"></i>
+          </button>
+          <button id="lang-toggle" class="lang-toggle">PT/EN</button>
+        </div>
+      </div>
+      <div class="menu-overlay"></div>
+    </nav>
+
+    <header id="home" class="hero">
+      <div class="hero-particles"></div>
+      <div class="hero-canvas-container">
+        <canvas id="hero-canvas"></canvas>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-title-container">
+          <h1 class="glitch-hero-title">
+            Arte <span class="accent">Viva</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            Mosaicos que transformam <span class="typing-text"></span>
+          </h2>
+        </div>
+
+        <div class="hero-description">
+          <p>
+            Descubra o trabalho de
+            <span class="highlight-text">Silvia Marcon</span>, onde a arte
+            urbana e os mosaicos se unem para criar experiências visuais únicas,
+            transformando espaços e conectando pessoas.
+          </p>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#galeria" class="cta-button primary">Explorar galeria</a>
+          <a href="#workshop" class="cta-button secondary">Workshops</a>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-item" data-value="180">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Obras de Arte</div>
+          </div>
+          <div class="stat-item" data-value="10">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Anos de Arte</div>
+          </div>
+          <div class="stat-item" data-value="50">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Cidades</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-container">
+          <img
+            src="assets/mockup-sobrecapa-2048x1536.png.webp"
+            alt="Obra em Destaque"
+            class="main-image"
+          />
+          <div class="floating-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+          </div>
+        </div>
+        <div class="image-interaction-hint">
+          <span>Interaja com a imagem</span>
+          <i class="fas fa-hand-pointer"></i>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Role para explorar</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </header>
+
+    <section id="galeria" class="gallery">
+      <h2>Galeria de Arte</h2>
+      <div class="gallery-grid">
+        <!-- Grid items will be added dynamically via JavaScript -->
+      </div>
+    </section>
+
+    <section id="manifesto" class="manifesto-section">
+      <div class="manifesto-container">
+        <h2 class="glitch-text">Arte em Tempos Digitais</h2>
+
+        <div class="manifesto-content">
+          <div class="manifesto-column">
+            <h3>
+              Por que <span class="highlight">Monalisa</span> importa hoje?
+            </h3>
+            <p>
+              Em um mundo saturado de imagens digitais, a verdadeira arte tem o
+              poder de nos fazer <span class="emphasis">parar</span>. De nos
+              fazer <span class="emphasis">sentir</span>. De nos fazer
+              <span class="emphasis">refletir</span>.
+            </p>
+
+            <p>
+              A Monalisa original é vista por
+              <span class="emphasis-data">30.000 pessoas diariamente</span>,
+              protegida por vidros e distante. Mas e se ela pudesse
+              <span class="highlight">sair do Louvre</span> e conversar conosco
+              sobre nossos dilemas contemporâneos?
+            </p>
+
+            <div class="manifesto-stat">
+              <div class="stat-number accent-pulse">+50</div>
+              <div class="stat-description">
+                Personalidades únicas de Monalisa criadas por Silvia Marcon
+              </div>
+            </div>
+
+            <p class="urgency-text">
+              Cada obra é uma voz. Cada mosaico tem personalidade própria. E
+              <span class="highlight">apenas algumas</span> podem fazer parte do
+              seu acervo pessoal.
+            </p>
+          </div>
+
+          <div class="manifesto-column">
+            <div class="testimonial">
+              <p>
+                "A arte de Silvia não apenas decora ambientes - ela transforma
+                espaços e desperta conversas."
+              </p>
+              <span class="testimonial-author"
+                >— Revista Arte Contemporânea</span
+              >
+            </div>
+
+            <h3>
+              O que você <span class="emphasis">perde</span> sem arte em sua
+              vida?
+            </h3>
+            <ul class="benefits-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Conexão com sua própria
+                identidade
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Conversas profundas
+                iniciadas por obras
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Status e reconhecimento
+                cultural
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Investimento que valoriza
+                com o tempo
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Suporte à revolução
+                artística feminina
+              </li>
+            </ul>
+
+            <div class="cta-container">
+              <a href="#produtos" class="pulse-button"
+                >TRANSFORME SEU ESPAÇO AGORA</a
+              >
+              <p class="limited-offer">Peças limitadas disponíveis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção do Livro -->
+    <section id="livro" class="book-section">
+      <div class="book-container">
+        <div class="book-header">
+          <h2 class="glitch-text" data-text="Monalisas - Releituras Urbanas">
+            <span class="accent-text">Monalisas</span> - Releituras Urbanas
+          </h2>
+          <div class="book-subtitle-container">
+            <span class="book-typing-effect"></span>
+            <span class="cursor">|</span>
+          </div>
+        </div>
+
+        <div class="book-content">
+          <div class="book-showcase">
+            <div class="book-3d-wrapper">
+              <div class="book-3d">
+                <div class="book-cover">
+                  <img
+                    src="assets/mockup-sobrecapa-2048x1536.png.webp"
+                    alt="Capa do livro Monalisas"
+                  />
+                </div>
+                <div class="book-back"></div>
+                <div class="book-spine"></div>
+                <div class="book-pages"></div>
+              </div>
+            </div>
+            <div class="book-shadow"></div>
+
+            <div class="book-badges">
+              <div class="book-badge">
+                <i class="fas fa-award"></i>
+                <span>Capa dura</span>
+              </div>
+              <div class="book-badge">
+                <i class="fas fa-images"></i>
+                <span>172 páginas</span>
+              </div>
+              <div class="book-badge">
+                <i class="fas fa-palette"></i>
+                <span>Impressão 4 cores</span>
+              </div>
+              <div class="book-badge">
+                <i class="fas fa-crown"></i>
+                <span>Edição limitada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-details">
+            <h3 class="book-title">Monalisas - Releituras Urbanas</h3>
+            <p class="book-description">
+              Mergulhe em uma década de criação artística e transformação do
+              espaço urbano através das 180 releituras da Mona Lisa que realizei
+              pelas ruas do Brasil e do mundo. Este livro documenta uma jornada
+              única de arte, resistência e conexão com o público. Cada página
+              revela não apenas as obras, mas as histórias por trás delas, os
+              desafios, as técnicas e os encontros que moldaram minha trajetória
+              como artista urbana.
+            </p>
+
+            <div class="book-format">
+              <div class="format-item">
+                <i class="fas fa-book"></i>
+                <span>Formato: 26 x 20 cm</span>
+              </div>
+              <div class="format-item">
+                <i class="fas fa-layer-group"></i>
+                <span>Papel couché alta gramatura</span>
+              </div>
+              <div class="format-item">
+                <i class="fas fa-certificate"></i>
+                <span>Acabamento premium</span>
+              </div>
+              <div class="format-item">
+                <i class="fas fa-star"></i>
+                <span>Sobrecapa exclusiva</span>
+              </div>
+            </div>
+
+            <div class="book-testimonial">
+              <i class="fas fa-quote-left"></i>
+              <blockquote>
+                "Uma obra fundamental para compreender a ressignificação do
+                espaço urbano através da arte contemporânea. Silvia Marcon criou
+                muito mais que releituras da Mona Lisa – ela produziu um diálogo
+                visual potente entre a tradição artística e as inquietações do
+                presente."
+              </blockquote>
+              <span class="testimonial-author"
+                >— Guilherme Wisnik, Crítico de Arte e Arquitetura</span
+              >
+            </div>
+
+            <div class="book-price-container">
+              <div class="book-price">
+                <span class="price-title">Preço</span>
+                <div class="price-value">190</div>
+                <span class="price-installment">ou 12x de R$ 19,42</span>
+              </div>
+
+              <div class="book-stock">
+                <div class="stock-bar">
+                  <div class="stock-progress"></div>
+                </div>
+                <div class="stock-text">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span
+                    >Restam apenas
+                    <span class="stock-count">37</span> unidades</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="book-actions">
+              <a
+                href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20adquirir%20o%20livro%20Monalisas%20-%20Releituras%20Urbanas"
+                class="buy-book-button"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span>Adquirir meu exemplar agora</span>
+              </a>
+
+              <div class="shipping-options">
+                <div class="shipping-toggle">
+                  <div class="option active">Retirada</div>
+                  <div class="option">Envio</div>
+                </div>
+
+                <div class="shipping-content active">
+                  <div class="pickup-location">
+                    <h4>São Paulo</h4>
+                    <p>Marco Zero – Lugar e Arte</p>
+                    <p>Endereço: R. Augusta, 1500, São Paulo - SP</p>
+                  </div>
+
+                  <div class="pickup-location">
+                    <h4>Porto Alegre</h4>
+                    <p>+ART bom fim</p>
+                    <p>Endereço: R. Fernandes Vieira, 508, Porto Alegre - RS</p>
+                  </div>
+
+                  <p class="shipping-detail">
+                    A retirada pode ser feita em horário comercial mediante
+                    agendamento prévio.
+                  </p>
+                </div>
+
+                <div class="shipping-content">
+                  <p>
+                    Envio para todo o Brasil por correios ou transportadora.
+                  </p>
+                  <p>
+                    Frete calculado no momento da compra de acordo com seu CEP.
+                  </p>
+                  <p>Tempo médio de entrega: 5-10 dias úteis</p>
+                  <p class="shipping-detail">
+                    Para compras internacionais, entre em contato diretamente
+                    pelo WhatsApp para verificar disponibilidade e valores.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-preview">
+          <h3>Folheie algumas páginas</h3>
+          <div class="preview-slider">
+            <button class="preview-arrow prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="preview-track">
+              <div class="preview-item">
+                <img
+                  src="assets/Conteudo.png.webp"
+                  alt="Prévia do livro - Página 1"
+                />
+              </div>
+              <div class="preview-item">
+                <img
+                  src="assets/MOCKUP-FRENTE-E-VERSO-2048x1167.png.webp"
+                  alt="Prévia do livro - Página 2"
+                />
+              </div>
+              <div class="preview-item">
+                <img
+                  src="assets/Screenshot-2024-09-27-17.04.04.png.webp"
+                  alt="Prévia do livro - Página 3"
+                />
+              </div>
+            </div>
+            <button class="preview-arrow next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="book-faq">
+          <h3>Perguntas Frequentes</h3>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>O livro é autografado?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Sim! Todos os exemplares são autografados pela artista Silvia
+                  Marcon. Se você deseja uma dedicatória personalizada, pode
+                  solicitar no momento da compra.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Quais formas de pagamento são aceitas?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Aceitamos pagamento via PIX, transferência bancária, cartão de
+                  crédito (em até 12x) e boleto bancário. Todos os detalhes
+                  serão fornecidos após o contato inicial para aquisição do
+                  livro.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Posso comprar mais de um exemplar?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Claro! Para compras múltiplas ou corporativas, oferecemos
+                  descontos especiais. Entre em contato diretamente para
+                  discutir as possibilidades.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>O livro está disponível em formato digital?</span>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Não, "Monalisas - Releituras Urbanas" é uma obra
+                  exclusivamente física, projetada para oferecer uma experiência
+                  tátil e visual incomparável, valorizando a materialidade da
+                  arte em um objeto cuidadosamente produzido.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-cta">
+          <p>
+            Uma década de arte urbana, 180 releituras da Mona Lisa, inúmeras
+            histórias e descobertas em um único livro de arte que se tornará uma
+            peça especial em sua coleção.
+          </p>
+          <a
+            href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20adquirir%20o%20livro%20Monalisas%20-%20Releituras%20Urbanas"
+            class="buy-book-button"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span>Garantir meu exemplar</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="produtos-section">
+      <div class="produtos-container">
+        <div class="produtos-header">
+          <h2 class="glitch-text" data-text="Produtos Exclusivos">
+            Produtos Exclusivos
+          </h2>
+          <p>
+            Leve a arte urbana de Silvia Marcon para sua casa com coleções
+            limitadas e itens exclusivos
+          </p>
+        </div>
+
+        <div class="produtos-nav">
+          <div class="produtos-nav-item active">Todos</div>
+          <div class="produtos-nav-item">Vestuário</div>
+          <div class="produtos-nav-item">Casa & Decoração</div>
+          <div class="produtos-nav-item">Acessórios</div>
+          <div class="produtos-nav-item">Edições Limitadas</div>
+        </div>
+
+        <div class="produtos-grid">
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/produtos/camiseta monalisa MF 100_ algodão 150 reais.jpeg"
+                alt="Camiseta Monalisa"
+                class="produto-image"
+              />
+              <div class="produto-badge">Novo</div>
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Camiseta Monalisa</h3>
+                <p class="produto-description">
+                  Edição Limitada • 100% Algodão Orgânico • Estampa Exclusiva
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 150,00
+                    <span class="price-installment">ou 3x de R$ 50,00</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 10
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar a Camiseta Monalisa"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/produtos/caneca monaliza 79,90 reais.jpeg"
+                alt="Caneca Monalisa"
+                class="produto-image"
+              />
+              <div class="produto-badge">Destaque</div>
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Caneca Monalisa</h3>
+                <p class="produto-description">
+                  Série Especial • Cerâmica Premium • Arte Exclusiva
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 79,90
+                    <span class="price-installment">à vista</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 15
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar a Caneca Monalisa"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/produtos/almofada mona -72 e com enchimento 82 reais.jpeg"
+                alt="Almofada Mona"
+                class="produto-image"
+              />
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Almofada Mona</h3>
+                <p class="produto-description">
+                  Com enchimento premium • Tecido antialérgico • Dupla face
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 82,00
+                    <span class="price-installment">à vista</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 8
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar a Almofada Mona"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/Screenshot-2024-09-27-17.04.04.png.webp"
+                alt="Ecobag Monalisa"
+                class="produto-image"
+              />
+              <div class="produto-badge">Eco</div>
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Ecobag Monalisa</h3>
+                <p class="produto-description">
+                  Lona sustentável • Estampa artística • Ideal para compras
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 49,90
+                    <span class="price-installment">à vista</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 20
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar a Ecobag Monalisa"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/mockup-sobrecapa-2048x1536.png.webp"
+                alt="Poster Mona Rebelde"
+                class="produto-image"
+              />
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Poster Mona Rebelde</h3>
+                <p class="produto-description">
+                  Impressão fine art • Papel texturizado • 40x60cm
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 120,00
+                    <span class="price-installment">ou 2x de R$ 60,00</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 5
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar o Poster Mona Rebelde"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="produto-card">
+            <div class="produto-image-container">
+              <img
+                src="assets/MOCKUP-FRENTE-E-VERSO-2048x1167.png.webp"
+                alt="Pin Esmaltado"
+                class="produto-image"
+              />
+              <div class="produto-badge">Mini Arte</div>
+            </div>
+            <div class="produto-content">
+              <div class="produto-info">
+                <h3 class="produto-title">Pin Esmaltado Monalisa</h3>
+                <p class="produto-description">
+                  Metal esmaltado • Acabamento premium • 3 designs disponíveis
+                </p>
+                <div class="produto-meta">
+                  <div class="produto-price">
+                    R$ 25,00
+                    <span class="price-installment">à vista</span>
+                  </div>
+                  <div class="produto-stock">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Restam 30
+                  </div>
+                </div>
+              </div>
+              <div class="produto-actions">
+                <a
+                  href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar o Pin Esmaltado Monalisa"
+                  class="produto-buy-btn"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Comprar
+                </a>
+                <button class="produto-favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="produtos-footer">
+          <a href="#catalogo-completo" class="ver-todos-btn">
+            Ver catálogo completo
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshop" class="workshop-section">
+      <div class="workshop-container">
+        <div class="workshop-content">
+          <h2>Workshop de Mosaico</h2>
+          <p class="workshop-subtitle">
+            Aprenda com a reconhecida artista urbana Silvia Marcon
+          </p>
+
+          <p class="workshop-description">
+            Descubra a arte milenar do mosaico em uma experiência única e
+            transformadora. Aprenda técnicas tradicionais e contemporâneas,
+            desenvolvendo seu próprio estilo e criando peças exclusivas em um
+            ambiente inspirador.
+          </p>
+
+          <ul class="workshop-features">
+            <li class="workshop-feature-item">
+              <i class="fas fa-paint-brush"></i>
+              <span>Técnicas tradicionais e contemporâneas</span>
+            </li>
+            <li class="workshop-feature-item">
+              <i class="fas fa-gem"></i>
+              <span>Materiais de alta qualidade inclusos</span>
+            </li>
+            <li class="workshop-feature-item">
+              <i class="fas fa-users"></i>
+              <span>Grupos pequenos (máx. 8 pessoas)</span>
+            </li>
+            <li class="workshop-feature-item">
+              <i class="fas fa-award"></i>
+              <span>Certificado de participação</span>
+            </li>
+            <li class="workshop-feature-item">
+              <i class="fas fa-coffee"></i>
+              <span>Coffee break artístico</span>
+            </li>
+            <li class="workshop-feature-item">
+              <i class="fas fa-hands-helping"></i>
+              <span>Suporte pós-workshop</span>
+            </li>
+          </ul>
+
+          <div class="workshop-dates">
+            <h3>Próximas datas:</h3>
+            <div class="workshop-date-item">
+              <div class="workshop-date-info">
+                <span class="workshop-date-label">18-19 de Novembro, 2024</span>
+                <span class="workshop-date-details">9h às 17h • São Paulo</span>
+              </div>
+              <span class="workshop-date-status disponivel">Disponível</span>
+            </div>
+            <div class="workshop-date-item">
+              <div class="workshop-date-info">
+                <span class="workshop-date-label">2-3 de Dezembro, 2024</span>
+                <span class="workshop-date-details"
+                  >9h às 17h • Rio de Janeiro</span
+                >
+              </div>
+              <span class="workshop-date-status poucas-vagas"
+                >Poucas vagas</span
+              >
+            </div>
+            <div class="workshop-date-item">
+              <div class="workshop-date-info">
+                <span class="workshop-date-label">20-21 de Janeiro, 2025</span>
+                <span class="workshop-date-details"
+                  >9h às 17h • Porto Alegre</span
+                >
+              </div>
+              <span class="workshop-date-status esgotado">Esgotado</span>
+            </div>
+          </div>
+
+          <div class="workshop-price-container">
+            <span class="workshop-price">R$ 350</span>
+            <div class="workshop-price-details">
+              <span class="workshop-price-label">por pessoa</span>
+              <span class="workshop-price-installment"
+                >ou em até 3x sem juros</span
+              >
+            </div>
+          </div>
+
+          <div class="workshop-cta">
+            <a
+              href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de reservar uma vaga no Workshop de Mosaico"
+              class="workshop-reserve-btn"
+            >
+              <i class="fab fa-whatsapp"></i> Reservar Vaga
+            </a>
+            <a href="#workshop-info" class="workshop-info-btn">
+              <i class="fas fa-info-circle"></i> Mais Informações
+            </a>
+          </div>
+
+          <div class="workshop-certificates">
+            <div class="workshop-certificate">
+              <img
+                src="assets/MOCKUP-FRENTE-E-VERSO-2048x1167.png.webp"
+                alt="Certificado"
+              />
+            </div>
+            <div class="workshop-certificate">
+              <img
+                src="assets/Screenshot-2024-09-27-17.04.04.png.webp"
+                alt="Certificado"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-media">
+          <div class="workshop-image-main">
+            <img src="assets/foto.webp" alt="Workshop de Mosaico" />
+          </div>
+          <div class="workshop-image-floating">
+            <img
+              src="assets/produtos/almofada mona -72 e com enchimento 82 reais.jpeg"
+              alt="Detalhe Workshop"
+            />
+          </div>
+          <div class="workshop-image-floating">
+            <img
+              src="assets/produtos/caneca monaliza 79,90 reais.jpeg"
+              alt="Detalhe Workshop"
+            />
+          </div>
+          <div class="workshop-image-floating">
+            <img
+              src="assets/produtos/camiseta monalisa MF 100_ algodão 150 reais.jpeg"
+              alt="Detalhe Workshop"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline-section">
+      <h2>Jornada Artística</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2012</div>
+            <h3>O Início</h3>
+            <p>
+              Primeira Monalisa em mosaico nas ruas de Porto Alegre, marcando o
+              início de uma revolução artística.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2015</div>
+            <h3>Expansão Internacional</h3>
+            <p>
+              As Monalisas começam a aparecer em outras cidades do Brasil e do
+              mundo, levando arte urbana para novos horizontes.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2018</div>
+            <h3>Reconhecimento</h3>
+            <p>
+              Premiação internacional por contribuição à arte urbana e
+              democratização da cultura.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2024</div>
+            <h3>10 Anos de Arte</h3>
+            <p>
+              Celebração de uma década de transformação urbana através da arte
+              em mosaico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exposicoes" class="exhibition-section">
+      <h2>Exposições em Destaque</h2>
+      <div class="exhibition-grid">
+        <div class="exhibition-card">
+          <img
+            src="assets/Conteudo.png.webp"
+            alt="Exposição 1"
+            class="exhibition-image"
+          />
+          <div class="exhibition-info">
+            <div class="exhibition-date">Em cartaz até 30/04/2024</div>
+            <h3>Monalisas: Releituras Urbanas</h3>
+            <p>Museu de Arte Contemporânea - Porto Alegre</p>
+          </div>
+        </div>
+        <div class="exhibition-card">
+          <img
+            src="assets/MOCKUP-FRENTE-E-VERSO-2048x1167.png.webp"
+            alt="Exposição 2"
+            class="exhibition-image"
+          />
+          <div class="exhibition-info">
+            <div class="exhibition-date">Maio 2024</div>
+            <h3>Arte nas Ruas</h3>
+            <p>Centro Cultural São Paulo - SP</p>
+          </div>
+        </div>
+        <div class="exhibition-card">
+          <img
+            src="assets/Screenshot-2024-09-27-17.04.04.png.webp"
+            alt="Exposição 3"
+            class="exhibition-image"
+          />
+          <div class="exhibition-info">
+            <div class="exhibition-date">Junho 2024</div>
+            <h3>Mosaicos Contemporâneos</h3>
+            <p>Galeria de Arte Moderna - RJ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nft" class="nft-section">
+      <div class="nft-overlay"></div>
+      <div class="nft-container">
+        <h2 class="glitch-text">Monalisa NFT Club</h2>
+
+        <div class="nft-intro">
+          <div class="nft-badge">
+            <div class="badge-inner">
+              <span class="badge-text">Exclusivo</span>
+              <span class="badge-count">100</span>
+              <span class="badge-text">Unidades</span>
+            </div>
+          </div>
+          <p class="nft-headline">
+            Entre para a <span class="emphasis-glow">lista de espera</span> e
+            tenha acesso prioritário à coleção exclusiva de NFTs Monalisa - uma
+            revolução na arte digital com benefícios no mundo real
+          </p>
+        </div>
+
+        <div class="nft-grid">
+          <div class="nft-preview">
+            <div class="nft-card">
+              <div class="nft-card-inner">
+                <img
+                  src="assets/mockup-sobrecapa-2048x1536.png.webp"
+                  alt="NFT Monalisa"
+                  class="nft-image"
+                />
+                <div class="nft-info">
+                  <h3>Monalisa NFT #001</h3>
+                  <p class="nft-artist">por Silvia Marcon</p>
+                  <div class="nft-meta">
+                    <span class="nft-edition">Edição Limitada</span>
+                    <span class="nft-price">5 ETH</span>
+                  </div>
+                </div>
+              </div>
+              <div class="nft-shine"></div>
+            </div>
+            <div class="physical-art">
+              <div class="physical-art-badge">
+                <i class="fas fa-plus"></i>
+              </div>
+              <img
+                src="assets/Screenshot-2024-09-27-17.04.04.png.webp"
+                alt="Arte Física Incluída"
+              />
+              <div class="physical-art-label">Arte Física Incluída</div>
+            </div>
+          </div>
+
+          <div class="nft-benefits">
+            <h3>Benefícios Exclusivos dos Colecionadores</h3>
+            <ul class="benefits-icons-list">
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Workshops Premium</h4>
+                  <p>
+                    Acesso ilimitado a todos os workshops de mosaico ministrados
+                    por Silvia Marcon por 2 anos
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Passe VIP para Eventos</h4>
+                  <p>
+                    Entrada garantida em exposições e eventos de arte no Brasil
+                    e em cidades selecionadas pelo mundo
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-tags"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Descontos Exclusivos</h4>
+                  <p>
+                    30% de desconto vitalício em todos os produtos e obras do
+                    catálogo de Silvia Marcon
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Potencial de Valorização</h4>
+                  <p>
+                    Investimento em arte digital com histórico comprovado de
+                    valorização ano após ano
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Arte Física Exclusiva</h4>
+                  <p>
+                    Receba uma obra física de mosaico Monalisa (30x30cm)
+                    assinada pela artista
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="benefit-text">
+                  <h4>Comunidade Exclusiva</h4>
+                  <p>
+                    Acesso a grupo privado com outros colecionadores e encontros
+                    exclusivos com a artista
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nft-why">
+          <h3>Por que adquirir a NFT Monalisa?</h3>
+          <div class="why-columns">
+            <div class="why-column">
+              <h4><i class="fas fa-fingerprint"></i> Propriedade Autêntica</h4>
+              <p>
+                Cada NFT é única e verificável na blockchain, garantindo a
+                autenticidade e a propriedade exclusiva da sua Monalisa digital.
+                Você realmente possui a obra, com registro imutável de sua
+                autenticidade.
+              </p>
+            </div>
+            <div class="why-column">
+              <h4><i class="fas fa-gem"></i> Escassez Digital</h4>
+              <p>
+                Apenas 100 NFTs Monalisa serão criadas. Nunca. A escassez
+                programada garante que o valor da sua coleção digital permaneça
+                exclusivo e potencialmente se valorize com o tempo.
+              </p>
+            </div>
+            <div class="why-column">
+              <h4><i class="fas fa-infinity"></i> O Melhor de Dois Mundos</h4>
+              <p>
+                Ao contrário de outras NFTs, a coleção Monalisa conecta o mundo
+                digital ao físico. Além do ativo digital, você recebe uma obra
+                física original para exibir em sua casa ou escritório.
+              </p>
+            </div>
+            <div class="why-column">
+              <h4><i class="fas fa-landmark"></i> Apoio à Arte</h4>
+              <p>
+                Ao adquirir uma NFT Monalisa, você está diretamente financiando
+                o trabalho de uma artista independente, contribuindo para a
+                continuidade da arte urbana e da democratização cultural.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="nft-waitlist">
+          <div class="waitlist-content">
+            <h3>Entre para a Lista de Espera</h3>
+            <p>
+              Garanta seu lugar para ter acesso prioritário ao lançamento da
+              coleção NFT Monalisa. Apenas 100 unidades serão produzidas, com
+              lançamento previsto para Junho/2024.
+            </p>
+
+            <form class="waitlist-form">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Seu nome completo"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Seu melhor e-mail"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phone" placeholder="Telefone/WhatsApp" />
+              </div>
+              <div class="form-group">
+                <select id="experience" required>
+                  <option value="" disabled selected>
+                    Experiência com NFTs
+                  </option>
+                  <option value="beginner">
+                    Iniciante (Nunca comprei NFTs)
+                  </option>
+                  <option value="intermediate">
+                    Intermediário (Já comprei algumas NFTs)
+                  </option>
+                  <option value="advanced">Avançado (Sou colecionador)</option>
+                </select>
+              </div>
+              <button type="submit" class="waitlist-button">
+                <span class="button-text">Entrar na Lista de Espera</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <p class="waitlist-note">
+              Ao se inscrever, você receberá atualizações exclusivas sobre o
+              lançamento e benefícios especiais para os primeiros da lista.
+              Vagas limitadas!
+            </p>
+          </div>
+
+          <div class="waitlist-counter">
+            <div class="counter-inner">
+              <div class="counter-value">87</div>
+              <div class="counter-label">pessoas na lista</div>
+              <div class="counter-remaining">
+                Restam apenas <span>13</span> vagas prioritárias
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="artist-section">
+      <div class="artist-bg-effects">
+        <div class="artist-effect-circle"></div>
+        <div class="artist-effect-line"></div>
+        <div class="artist-particles"></div>
+      </div>
+
+      <div class="artist-container">
+        <div class="artist-header">
+          <h2 class="glitch-text" data-text="Silvia Marcon">Silvia Marcon</h2>
+          <div class="artist-tagline">
+            <span class="typing-effect"></span>
+            <span class="cursor">|</span>
+          </div>
+        </div>
+
+        <div class="artist-content">
+          <div class="artist-image-container">
+            <div class="artist-image-wrapper">
+              <img
+                src="assets/foto.webp"
+                alt="Silvia Marcon"
+                class="artist-image"
+              />
+              <div class="image-badges">
+                <span class="image-badge">Artista Visual</span>
+                <span class="image-badge">Mosaicista</span>
+                <span class="image-badge">Arte Urbana</span>
+              </div>
+            </div>
+
+            <div class="artist-social">
+              <a href="#" class="artist-social-item"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="artist-social-item"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="artist-social-item"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="artist-social-item"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="artist-bio">
+            <div class="bio-tab-container">
+              <div class="bio-tabs">
+                <button class="bio-tab active" data-tab="historia">
+                  História
+                </button>
+                <button class="bio-tab" data-tab="visao">
+                  Visão Artística
+                </button>
+                <button class="bio-tab" data-tab="conquistas">
+                  Conquistas
+                </button>
+              </div>
+
+              <div class="bio-tab-content active" id="historia">
+                <p class="bio-intro">
+                  Um trabalho que pulsa com a vibração da cidade.
+                </p>
+                <p>
+                  Minha jornada artística começou antes mesmo das primeiras
+                  palavras. Desde criança, a arte sempre foi minha forma de
+                  expressão mais genuína. Em 2012, encontrei no mosaico minha
+                  verdadeira vocação, transformando as ruas de Porto Alegre em
+                  uma galeria a céu aberto.
+                </p>
+                <p>
+                  Cada obra que crio é um portal entre o clássico e o
+                  contemporâneo, uma ponte entre o museu e a rua. A Monalisa,
+                  com seu olhar enigmático, tornou-se minha parceira nessa
+                  missão de democratizar a arte.
+                </p>
+              </div>
+
+              <div class="bio-tab-content" id="visao">
+                <p class="bio-intro">
+                  Arte que rompe barreiras e conecta pessoas.
+                </p>
+                <p>
+                  A arte pública é muito mais que decoração urbana - é um ato
+                  político. Cada mosaico que instalo nas ruas é uma declaração
+                  de que a arte pertence a todos, não apenas a quem pode pagar o
+                  ingresso de um museu.
+                </p>
+                <p>
+                  Através da Monalisa, exploro questões contemporâneas como
+                  feminismo, diversidade e justiça social. Cada releitura é uma
+                  nova voz, um novo olhar sobre nossos dilemas atuais. Quando
+                  alguém para diante de uma obra na rua, acontece um momento
+                  mágico de conexão e reflexão.
+                </p>
+              </div>
+
+              <div class="bio-tab-content" id="conquistas">
+                <p class="bio-intro">
+                  Uma década transformando o espaço urbano.
+                </p>
+                <ul class="achievement-list">
+                  <li>
+                    <span class="year">2012</span> Primeira Monalisa em mosaico
+                    nas ruas de Porto Alegre
+                  </li>
+                  <li>
+                    <span class="year">2015</span> Expansão dos projetos para
+                    outras cidades do Brasil
+                  </li>
+                  <li>
+                    <span class="year">2018</span> Reconhecimento internacional
+                    por contribuição à arte urbana
+                  </li>
+                  <li>
+                    <span class="year">2020</span> Primeira exposição solo
+                    "Monalisas Urbanas"
+                  </li>
+                  <li>
+                    <span class="year">2024</span> Lançamento do livro
+                    "Monalisas - Releituras Urbanas"
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="artist-quote">
+              <i class="fas fa-quote-left"></i>
+              <blockquote>
+                A arte deve estar nas ruas, ser acessível a todos. Um museu a
+                céu aberto onde as pessoas possam ser tocadas pela beleza em seu
+                caminho diário.
+              </blockquote>
+              <span class="quote-author">— Silvia Marcon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-timeline">
+          <div class="timeline-stats">
+            <div class="stat-card">
+              <div class="stat-number" data-value="2012">2012</div>
+              <div class="stat-label">Início da Jornada</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-value="180">180+</div>
+              <div class="stat-label">Obras Criadas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-value="50">50+</div>
+              <div class="stat-label">Cidades Impactadas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-value="12">12</div>
+              <div class="stat-label">Prêmios Recebidos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-cta">
+          <a href="#contato" class="artist-cta-button">
+            <i class="fas fa-envelope"></i> Entre em Contato
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-waves">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="footer-logo-text">
+                Silvia <span class="accent">Marcon</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">
+              Arte urbana que transforma espaços e conecta pessoas. Mosaicos
+              contemporâneos que levam beleza e reflexão para o cotidiano das
+              cidades.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="footer-social-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="footer-social-link">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="footer-social-link">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="footer-social-link">
+                <i class="fab fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav">
+            <h4>Navegação</h4>
+            <ul class="footer-nav-list">
+              <li class="footer-nav-item">
+                <a href="#home" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Home
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#galeria" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Galeria
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#workshop" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Workshop
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#exposicoes" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Exposições
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#produtos" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Produtos
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#nft" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> NFT Club
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#sobre" class="footer-nav-link">
+                  <i class="fas fa-chevron-right"></i> Sobre
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h4>Contato & Links</h4>
+            <ul class="footer-nav-list">
+              <li class="footer-nav-item">
+                <a
+                  href="mailto:contato@silviamarcon.art.br"
+                  class="footer-nav-link"
+                >
+                  <i class="fas fa-envelope"></i> contato@silviamarcon.art.br
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="tel:+5551999999999" class="footer-nav-link">
+                  <i class="fas fa-phone-alt"></i> (51) 99999-9999
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <i class="fas fa-map-marker-alt"></i> Porto Alegre • RS •
+                  Brasil
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#imprensa" class="footer-nav-link">
+                  <i class="fas fa-newspaper"></i> Imprensa
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#termos" class="footer-nav-link">
+                  <i class="fas fa-file-contract"></i> Termos e Condições
+                </a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#privacidade" class="footer-nav-link">
+                  <i class="fas fa-shield-alt"></i> Política de Privacidade
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-form">
+            <h4>Newsletter</h4>
+            <p class="footer-form-text">
+              Receba novidades, datas de exposições e lançamentos exclusivos
+              diretamente no seu email.
+            </p>
+            <div class="footer-form-container">
+              <input
+                type="email"
+                class="footer-form-input"
+                placeholder="Seu melhor email"
+                aria-label="Email para newsletter"
+              />
+              <button type="button" class="footer-form-btn">Assinar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copy">
+          <p class="footer-copy-text">
+            &copy; 2024 Silvia Marcon • Todos os direitos reservados •
+            Desenvolvido por
+            <a href="#" class="footer-copy-link">Estúdio Criativo</a>
+          </p>
+        </div>
+
+        <a href="#home" class="footer-back-top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <div class="footer-beam"></div>
+
+        <div class="footer-floating-images">
+          <div class="footer-floating-image">
+            <img
+              src="assets/produtos/camiseta monalisa MF 100_ algodão 150 reais.jpeg"
+              alt="Silvia Marcon Arte"
+            />
+          </div>
+          <div class="footer-floating-image">
+            <img
+              src="assets/produtos/caneca monaliza 79,90 reais.jpeg"
+              alt="Silvia Marcon Arte"
+            />
+          </div>
+          <div class="footer-floating-image">
+            <img
+              src="assets/produtos/almofada mona -72 e com enchimento 82 reais.jpeg"
+              alt="Silvia Marcon Arte"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Garantindo que o botão de menu mobile seja sempre visível em telas pequenas
+      window.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+
+        function checkMenuButton() {
+          if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = "flex";
+            mobileMenuBtn.style.visibility = "visible";
+            mobileMenuBtn.style.opacity = "1";
+            mobileMenuBtn.style.zIndex = "1100";
+          } else {
+            mobileMenuBtn.style.display = "none";
+          }
+        }
+
+        // Verificar no carregamento
+        checkMenuButton();
+
+        // Verificar em cada resize
+        window.addEventListener("resize", checkMenuButton);
+      });
+    </script>
+  </body>
+</html>
