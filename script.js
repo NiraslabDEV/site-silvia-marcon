@@ -240,64 +240,145 @@ document.addEventListener("DOMContentLoaded", () => {
     animateParticles();
   }
 
-  // Efeito 3D na imagem principal
-  const heroImage = document.querySelector(".hero-image-container");
-  const mainImage = document.querySelector(".main-image");
+  // Inicializar o carrossel da hero
+  const heroCarousel = document.querySelector(".hero-carousel");
+  if (heroCarousel) {
+    const slides = heroCarousel.querySelector(".carousel-slides");
+    const slideItems = heroCarousel.querySelectorAll(".carousel-slide");
+    const prevButton = heroCarousel.querySelector(".carousel-control.prev");
+    const nextButton = heroCarousel.querySelector(".carousel-control.next");
+    const indicators = heroCarousel.querySelectorAll(".carousel-indicator");
 
-  if (heroImage && mainImage) {
-    heroImage.addEventListener("mousemove", (e) => {
-      const { left, top, width, height } = heroImage.getBoundingClientRect();
-      const x = (e.clientX - left) / width;
-      const y = (e.clientY - top) / height;
+    let currentSlide = 0;
+    const totalSlides = slideItems.length;
 
-      const tiltX = (y - 0.5) * 15;
-      const tiltY = (x - 0.5) * -15;
+    // Função para atualizar o carrossel
+    function updateCarousel() {
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-      mainImage.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.05, 1.05, 1.05)`;
+      // Atualizar indicadores
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.add("active");
+        } else {
+          indicator.classList.remove("active");
+        }
+      });
+    }
 
-      // Movimento paralaxe nos elementos flutuantes
-      const elements = document.querySelectorAll(".floating-element");
-      elements.forEach((el, index) => {
-        const speed = 1 + index * 0.1;
-        const moveX = (x - 0.5) * 30 * speed;
-        const moveY = (y - 0.5) * 30 * speed;
+    // Evento para o botão anterior
+    prevButton.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
 
-        // Adicionamos translateZ para melhorar o efeito 3D
-        el.style.transform = `translateX(${moveX}px) translateY(${moveY}px) translateZ(${
-          moveX * 2
-        }px) rotate(${moveX * 0.2}deg)`;
+    // Evento para o botão próximo
+    nextButton.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    // Eventos para os indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        currentSlide = index;
+        updateCarousel();
       });
     });
 
-    heroImage.addEventListener("mouseleave", () => {
-      mainImage.style.transform =
-        "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+    // Auto-play do carrossel
+    let carouselInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }, 5000);
 
-      // Reset dos elementos flutuantes com animação suave
-      const elements = document.querySelectorAll(".floating-element");
-      elements.forEach((el) => {
-        el.style.transition = "transform 0.8s ease";
-        el.style.transform =
-          "translateX(0) translateY(0) translateZ(0) rotate(0)";
-
-        // Remove a transição após a animação terminar
-        setTimeout(() => {
-          el.style.transition = "";
-        }, 800);
-      });
+    // Parar o auto-play ao passar o mouse
+    heroCarousel.addEventListener("mouseenter", () => {
+      clearInterval(carouselInterval);
     });
 
-    // Oculta a dica de interação após o primeiro movimento do mouse
-    const interactionHint = document.querySelector(".image-interaction-hint");
+    // Retomar o auto-play ao remover o mouse
+    heroCarousel.addEventListener("mouseleave", () => {
+      carouselInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }, 5000);
+    });
+
+    // Adicionar suporte para gestos de toque
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroCarousel.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    heroCarousel.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+
+      if (touchStartX - touchEndX > 50) {
+        // Deslizar para a esquerda
+        nextButton.click();
+      } else if (touchEndX - touchStartX > 50) {
+        // Deslizar para a direita
+        prevButton.click();
+      }
+    });
+  }
+
+  // Atualizar elementos flutuantes para usar imagens
+  const floatingElements = document.querySelectorAll(".floating-element");
+  if (floatingElements.length > 0) {
+    // Modificar interação para incluir as imagens
+    const heroImage = document.querySelector(".hero-image");
+
+    if (heroImage) {
+      heroImage.addEventListener("mousemove", (e) => {
+        const { left, top, width, height } = heroImage.getBoundingClientRect();
+        const x = (e.clientX - left) / width;
+        const y = (e.clientY - top) / height;
+
+        // Movimento paralaxe nos elementos flutuantes
+        floatingElements.forEach((el, index) => {
+          const speed = 1 + index * 0.1;
+          const moveX = (x - 0.5) * 30 * speed;
+          const moveY = (y - 0.5) * 30 * speed;
+
+          // Adicionamos translateZ para melhorar o efeito 3D
+          el.style.transform = `translateX(${moveX}px) translateY(${moveY}px) translateZ(${
+            moveX * 2
+          }px) rotate(${moveX * 0.2}deg)`;
+        });
+      });
+
+      heroImage.addEventListener("mouseleave", () => {
+        // Reset dos elementos flutuantes com animação suave
+        floatingElements.forEach((el) => {
+          el.style.transition = "transform 0.8s ease";
+          el.style.transform =
+            "translateX(0) translateY(0) translateZ(0) rotate(0)";
+
+          // Remove a transição após a animação terminar
+          setTimeout(() => {
+            el.style.transition = "";
+          }, 800);
+        });
+      });
+    }
+  }
+
+  // Ocultar dica de interação após o primeiro movimento do mouse
+  const interactionHint = document.querySelector(".image-interaction-hint");
+  const heroImage = document.querySelector(".hero-image");
+
+  if (interactionHint && heroImage) {
     heroImage.addEventListener(
       "mousemove",
       () => {
-        if (interactionHint) {
-          interactionHint.style.opacity = "0";
-          setTimeout(() => {
-            interactionHint.style.display = "none";
-          }, 500);
-        }
+        interactionHint.style.opacity = "0";
+        setTimeout(() => {
+          interactionHint.style.display = "none";
+        }, 500);
       },
       { once: true }
     );
@@ -745,7 +826,7 @@ if (productsGrid) {
             <p class="price">${product.price}</p>
             <span class="stock">${product.stock}</span>
           </div>
-          <a href="https://wa.me/SEU_NUMERO?text=Olá! Gostaria de comprar ${product.title}" class="buy-button">
+          <a href="https://wa.me/5511941431850?text=Olá! Gostaria de comprar ${product.title}" class="buy-button">
             <i class="fab fa-whatsapp"></i> Comprar
           </a>
         </div>
@@ -1987,4 +2068,92 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach((anchor) => {
       });
     }
   });
+});
+
+// ===== FINE ART PAGE =====
+document.addEventListener("DOMContentLoaded", function () {
+  // Filtros da galeria de Fine Arts removidos - mantendo apenas as categorias em cada item para referência
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  if (faqItems.length > 0) {
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", function () {
+        // Fecha todos os outros itens
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains("active")) {
+            otherItem.classList.remove("active");
+          }
+        });
+
+        // Toggle active class no item atual
+        item.classList.toggle("active");
+      });
+    });
+  }
+
+  // Animação de entrada dos elementos na página
+  const animateElements = document.querySelectorAll(
+    ".fine-art-item, .process-step, .faq-item"
+  );
+
+  if (animateElements.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    animateElements.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(30px)";
+      element.style.transition = "all 0.6s ease";
+      observer.observe(element);
+    });
+
+    // Estilo para a animação de entrada
+    document.head.insertAdjacentHTML(
+      "beforeend",
+      `
+      <style>
+        .animate-in {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      </style>
+    `
+    );
+  }
+
+  // Smooth Scroll para links de ancoragem
+  const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+  if (scrollLinks.length > 0) {
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        if (href !== "#") {
+          e.preventDefault();
+          const target = document.querySelector(href);
+
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    });
+  }
 });
