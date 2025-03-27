@@ -7969,3 +7969,87 @@ footer {
     height: 250px;
   }
 }
+
+/* Estilos para a seção de informações de impressão Fine Art */
+.fine-art-prints-info {
+  margin: 2rem 0 3rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.fine-art-prints-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.fine-art-papers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.paper-option {
+  flex: 1 1 calc(50% - 2rem);
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.paper-option h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.size-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.size-option:nth-child(2) {
+  background-color: rgba(var(--accent-color-rgb), 0.2);
+  border: 1px solid var(--accent-color);
+}
+
+.size-option span {
+  font-weight: 500;
+}
+
+.size-option strong {
+  color: var(--accent-color);
+}
+
+.fine-art-note {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  text-align: center;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .paper-option {
+    flex: 1 1 100%;
+  }
+
+  .fine-art-prints-info {
+    padding: 1.5rem;
+  }
+}
