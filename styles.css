@@ -2556,6 +2556,9 @@ footer {
   .mobile-menu-btn {
     display: flex !important; /* Garante que o botão apareça em telas menores */
     position: relative;
+    z-index: 1100;
+    visibility: visible !important;
+    opacity: 1 !important;
     margin-left: auto;
     margin-right: 0;
     order: 3;
@@ -5480,14 +5483,20 @@ footer {
 
 .produto-image-container {
   position: relative;
-  height: 280px;
+  height: 300px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .produto-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -6169,54 +6178,6 @@ footer {
 
 .footer-nav-link:hover i {
   transform: translateX(3px);
-}
-
-.footer-form-text {
-  color: #b0b0b0;
-  margin-bottom: 15px;
-  line-height: 1.7;
-}
-
-.footer-form-container {
-  display: flex;
-  gap: 10px;
-}
-
-.footer-form-input {
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 12px 15px;
-  color: #fff;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.footer-form-input:focus {
-  outline: none;
-  border-color: rgba(0, 255, 157, 0.3);
-  background-color: rgba(255, 255, 255, 0.07);
-}
-
-.footer-form-input::placeholder {
-  color: #666;
-}
-
-.footer-form-btn {
-  padding: 12px 20px;
-  background: linear-gradient(90deg, #00ff9d 0%, #00e0ff 100%);
-  border: none;
-  border-radius: 8px;
-  color: #000;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.footer-form-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
 }
 
 .footer-copy {
@@ -8051,5 +8012,186 @@ footer {
 
   .fine-art-prints-info {
     padding: 1.5rem;
+  }
+}
+
+/* ===== PRODUTOS PAGE ===== */
+.produtos-page {
+  background: linear-gradient(135deg, #080808 0%, #111111 100%);
+  padding-bottom: 100px;
+}
+
+.produtos-hero {
+  height: 40vh;
+  min-height: 300px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("assets/produtos/camiseta monalisa MF 100_ algodão 150 reais.jpeg")
+      center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.produtos-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 157, 0.2) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+}
+
+.produtos-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.produtos-hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.produtos-hero-content p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.produtos-container.full-catalog {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  /* Remover o layout de grid */
+  /* display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px; */
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Remover todos os estilos específicos dos filtros, mas manter aqui comentados para referência futura */
+/* 
+.produtos-filter {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  align-self: start;
+  position: sticky;
+  top: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-group {
+  margin-bottom: 30px;
+}
+
+.filter-group h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  position: relative;
+}
+
+.filter-group h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filter-option input {
+  accent-color: var(--accent-color);
+  width: 18px;
+  height: 18px;
+}
+
+.filter-option span {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+*/
+
+@media (max-width: 1200px) {
+  .produtos-container.full-catalog {
+    /* grid-template-columns: 1fr 2fr; */
+  }
+}
+
+@media (max-width: 900px) {
+  .produtos-container.full-catalog {
+    /* grid-template-columns: 1fr; */
+  }
+
+  /* .produtos-filter {
+    position: static;
+    margin-bottom: 40px;
+  } */
+
+  .produtos-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* Regras responsivas para imagens de produtos */
+@media (max-width: 768px) {
+  .produto-image-container {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .produto-image-container {
+    height: 200px;
+  }
+}
+
+/* Animações para os cards de produtos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
